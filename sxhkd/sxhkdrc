@@ -1,0 +1,31 @@
+# Terminal
+super + Return
+	alacritty
+
+# program launcher
+super + l
+	rofi -show drun &
+
+# Browser
+super + b
+	waterfox-g4
+
+# File Manager
+super + Shift + f
+	thunar
+
+# Discord
+super + shift + d
+  discord
+
+# Screenshot
+super + Shift + p
+  flameshot gui
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# kill user processes (Logout
+super + shift + Escape
+  kill -9 -1
