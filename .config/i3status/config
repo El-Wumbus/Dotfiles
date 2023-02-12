@@ -43,11 +43,11 @@ wireless _first_ {
 
 memory {
   memory_used_method = classical
-  format="Memory: %used/%total"
+  format="RAM: %used/%total"
 }
 
 tztime local {
-  format = "%m/%d/%Y %H:%M:%S"
+  format = "%m/%d/%Y %I:%M:%S"
 }
 
 battery all {
