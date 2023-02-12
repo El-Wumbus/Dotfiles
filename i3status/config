@@ -1,0 +1,61 @@
+general {
+  colors = true
+  color_good = "#b8bb26"
+  color_degraded = "#fabd2f"
+  color_bad = "#fb4934"
+  interval = 2
+  separator = "|"
+}
+
+
+order += "cpu_usage"
+order += "disk /"
+order += "disk /home"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "memory"
+order += "tztime local"
+order += "battery all"
+
+disk "/" {
+  format = "/: %percentage_used"
+}
+
+disk "/home" {
+  format = "/home: %percentage_used"
+}
+
+cpu_usage {
+    format = "CPU: %usage"
+    max_threshold = 95
+    degraded_threshold = 90
+}
+
+ethernet _first_ {
+  format_up = "LAN: %ip (%speed)"
+  format_down = "LAN: down"
+}
+
+wireless _first_ {
+  format_up = "WLAN: (%quality at %ssid) %ip"
+  format_down  = "WLAN: down"
+}
+
+memory {
+  memory_used_method = classical
+  format="Memory: %used/%total"
+}
+
+tztime local {
+  format = "%m/%d/%Y %H:%M:%S"
+}
+
+battery all {
+  format = "%status %percentage %remaining %emptytime"
+  format_down = "No battery"
+  status_chr = "⚡ CHR"
+  status_bat = "🔋 BAT"
+  status_unk = "? UNK"
+  status_full = "☻ FULL"
+  low_threshold = 10
+}
